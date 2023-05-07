@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikums Blog</title>
+    <link rel="stylesheet" href="/static/css/search.css">
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link
+      rel="icon"
+      type="image/vnd.microsoft.icon"
+      href="/static/images/favicon.ico"
+    />
+  </head>
+  <body>
+    <header class="sticky">
+      <nav>
+        <ul>
+          <li>
+            <img
+              id="logo"
+              src="/static/images/logo2.png"
+              alt="logo"
+              height="40"
+            />
+          </li>
+          <li>
+            <div class="dropdown">
+              <button
+                class="dropbtn"
+                onclick="window.location.href=`/index.html`"
+              >
+                Startseite
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Dienstag</button>
+              <div class="dropdown-content">
+                <a href="/Dienstag/Informatik-Grundlagen.html"
+                  >Grundlagen der Informatik</a
+                >
+                <a href="/Dienstag/Java-Grundlagen.html">Java Grundlagen</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn current">Mittwoch</button>
+              <div class="dropdown-content">
+                <a class="current" href="/Mittwoch/App-Entwicklung.html"
+                  >Mobile App entwicklung</a
+                >
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Donnerstag</button>
+              <div class="dropdown-content">
+                <a href="/Donnerstag/Austausch-mit-Azubis.html"
+                  >Austausch mit Azubis</a
+                >
+                <a href="/Donnerstag/Richtig-Präsentieren.html"
+                  >Richtig Präsentieren</a
+                >
+                <a href="/Donnerstag/Business-Analyse.html">Business Analyse</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Freitag</button>
+              <div class="dropdown-content">
+                <a href="/Freitag/Webentwicklung.html"
+                  >Webseitenprogrammierung</a
+                >
+                <a href="/Freitag/Design-Thinking.html">Design Thinking</a>
+              </div>
+            </div>
+          </li><li>{{ loginVar | safe}}</li>
+          <li>
+            <div class="autocomplete", style="width: auto;">
+              <input
+                id="search"
+                type="text"
+                name="myCountry"
+                placeholder="search"
+              />
+            </div>
+          </li>
+          
+        </ul>
+      </nav>
+    </header>
+    <div class="content">
+      <div class="text">
+        <h1>Mobile App Entwicklung</h1>
+        <br />
+        Am Mittwoch haben wir eine Mobile App entwickelt. Dafür genutzt haben
+        wir das Apple-Programm xCode und die Programmiersprache Swift. Wir haben
+        einen Playground erstellt und uns in den ersten drei Stunden mit den
+        Grundlagen beschäftigt.
+        <br /><br />
+        Zunächst programmierten wir einen kleinen Taschenrechner. Dabei haben wir
+        den „print“-Befehl, Konstanten mit dem „let“-Befehl, Variablen mit dem
+        „var“-Befehl erlernt und genutzt:
+        <code
+          >aufgabe&nbsp;=&nbsp;&#x201e;20&nbsp;+&nbsp;10&#x201c;<br />let&nbsp;ergebnis&nbsp;=&#x201c;\(aufgabe)&#x201c;<br />print(&quot;\(aufgabe)&nbsp;=&nbsp;\(ergebnis)&quot;)
+        </code>
+        <br />
+        Außerdem haben wir „if“ und „if-else“ Statements programmiert:
+        <code
+          >let&nbsp;number&nbsp;=&nbsp;10<br />if&nbsp;(number&nbsp;&gt;&nbsp;0)&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;print(&quot;Number&nbsp;is&nbsp;positive.&quot;)&nbsp;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;print(&quot;Number&nbsp;is&nbsp;negative.&quot;)&nbsp;<br />}&nbsp;<br />print(&quot;This&nbsp;statement&nbsp;is&nbsp;always&nbsp;executed.&quot;)
+        </code>
+        <br />
+        Nach der Mittagspause haben wir dann unser gelerntes Wissen angewandt
+        und ein Soundboard programmiert. Dafür haben wir Bilder und Audios aus
+        dem Internet heruntergeladen und in das passende Layout eingefügt.
+      </div>
+    </div>
+    <script src="/static/search.js"></script>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/verschiedenes/impressum.html">Impressum</a></li>
+          <li><a href="/verschiedenes/datenschutz.html">Datenschutz</a></li>
+          <li><a href="/verschiedenes/kontakt.html">Kontakt</a></li>
+          <li><a href="#top">🡅</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

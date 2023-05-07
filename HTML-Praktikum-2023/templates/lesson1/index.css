@@ -1,0 +1,14 @@
+#hello {
+    color: rgb(0, 255, 115)
+}
+
+#border {
+    border-style: solid;
+    border-color: rgb(185, 193, 21);
+    border-radius: 25px;
+}
+
+#bg {
+    background: #199c89;
+    border-radius: 25px;
+}

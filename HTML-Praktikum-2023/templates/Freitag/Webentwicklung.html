@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikums Blog</title>
+    <link rel="stylesheet" href="/static/css/search.css">
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link
+      rel="icon"
+      type="image/vnd.microsoft.icon"
+      href="/static/images/favicon.ico"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header class="sticky">
+      <nav>
+        <ul>
+          <li>
+            <img
+              id="logo"
+              src="/static/images/logo2.png"
+              alt="logo"
+              height="40"
+            />
+          </li>
+          <li>
+            <div class="dropdown">
+              <button
+                class="dropbtn"
+                onclick="window.location.href=`/index.html`"
+              >
+                Startseite
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Dienstag</button>
+              <div class="dropdown-content">
+                <a href="/Dienstag/Informatik-Grundlagen.html"
+                  >Grundlagen der Informatik</a
+                >
+                <a href="/Dienstag/Java-Grundlagen.html">Java Grundlagen</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Mittwoch</button>
+              <div class="dropdown-content">
+                <a href="/Mittwoch/App-Entwicklung.html"
+                  >Mobile App entwicklung</a
+                >
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Donnerstag</button>
+              <div class="dropdown-content">
+                <a href="/Donnerstag/Austausch-mit-Azubis.html"
+                  >Austausch mit Azubis</a
+                >
+                <a href="/Donnerstag/Richtig-Präsentieren.html"
+                  >Richtig Präsentieren</a
+                >
+                <a href="/Donnerstag/Business-Analyse.html">Business Analyse</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn current">Freitag</button>
+              <div class="dropdown-content">
+                <a class="current" href="/Freitag/Webentwicklung.html"
+                  >Webseitenprogrammierung</a
+                >
+                <a href="/Freitag/Design-Thinking.html">Design Thinking</a>
+              </div>
+            </div>
+          </li><li>{{ loginVar | safe}}</li>
+          <li>
+            <div class="autocomplete", style="width: auto;">
+              <input
+                id="search"
+                type="text"
+                name="myCountry"
+                placeholder="search"
+              />
+            </div>
+          </li>
+          
+        </ul>
+      </nav>
+    </header>
+    <div class="content">
+      <div class="text">
+        <p></p>
+        <h1>Webseitenprogrammierung</h1>
+        <br />
+        Am Freitag morgen haben wir uns im Rahmen der Webseitenprogrammierung
+        mit den Programmen HTML, CSS und JavaScript beschäftigt. Als erstes
+        haben wir uns die für ein HTML-Dokument typische Struktur angeschaut:
+        <br />
+      <code>&lt;!DOCTYPE html&gt;<br />&lt;html lang=&quot;en&quot;&gt;<br />&lt;head&gt;<br />&lt;meta charset=&quot;UTF-8&quot; /&gt;<br />&lt;meta http-equiv=&quot;X-UA-Compatible&quot;content=&quot;IE=edge&quot; /&gt;<br />&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0&quot; /&gt;<br />&lt;title&gt;Document&lt;/title&gt;<br />&lt;/head&gt;<br />&lt;body&gt;&lt;/body&gt;<br />&lt;/html&gt;</code>
+        <br />
+
+        <div class="row">
+          <div class="col-sm">
+            Dann haben wir das erste mal Bootstrap in unsere HTML Datei
+            eingebunden und ein div-container mit drei Spalten erstellt. In die
+            erste haben wir ein Formular für später erstellt und in die zweite
+            ein Lied eingebunden. In der dritten Spalte wurde ein Lied über
+            Spotify eingebunden.
+            <code
+              >&lt;!DOCTYPE&nbsp;html&gt;<br />&lt;html&nbsp;lang=&quot;en&quot;&gt;<br />&nbsp;&nbsp;&lt;head&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;charset=&quot;UTF-8&quot;&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;http-equiv=&quot;X-UA-Compatible&quot;&nbsp;content=&quot;IE=edge&quot;&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;name=&quot;viewport&quot;&nbsp;content=&quot;width=device-width,&nbsp;initial-scale=1.0&quot;&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Lesson&nbsp;1&lt;/title&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;rel=&quot;stylesheet&quot;&nbsp;href=&quot;index.css&quot;&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;link<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rel=&quot;stylesheet&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;integrity=&quot;sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crossorigin=&quot;anonymous&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<br />&nbsp;&nbsp;&lt;/head&gt;<br /><br />&nbsp;&nbsp;&lt;body&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&nbsp;style=&quot;text-align:&nbsp;center&quot;&nbsp;id=&quot;hello&quot;&gt;Hello&nbsp;World&lt;/h1&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&nbsp;id=&quot;meinName&quot;&gt;&lt;/h1&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;index.js&quot;&gt;&lt;/script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;border&quot;&nbsp;class=&quot;container&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;bg&quot;&nbsp;class=&quot;row&nbsp;justify-content-md-center&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-sm&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;name&quot;&gt;Username:&nbsp;&lt;/label&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;text&quot;&nbsp;name=&quot;name&quot;&nbsp;id=&quot;name&quot;&nbsp;placeholder=&quot;Username&quot;&nbsp;/&gt;&lt;br&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;password&quot;&gt;Password:&lt;/label&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;password&quot;&nbsp;name=&quot;pwd&quot;&nbsp;id=&quot;pwd&quot;&nbsp;placeholder=&quot;Password&quot;&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onclick=&quot;readInput()&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id=&quot;btn&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type=&quot;button&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class=&quot;btn&nbsp;btn-outline-primary&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submit<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-sm&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;images/affe.jpg&quot;&nbsp;alt=&quot;Affe&quot;&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-sm&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;iframe<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;border-radius:&nbsp;100px&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src=&quot;https://open.spotify.com/embed/track/68EkhVWIeULhHxcbi1QhzK&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width=&quot;100%&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height=&quot;352&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frameborder=&quot;0&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allowfullscreen=&quot;&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allow=&quot;autoplay;&nbsp;clipboard-write;&nbsp;fullscreen;&nbsp;picture-in-picture&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loading=&quot;lazy&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&lt;/iframe&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;footer&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hr&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&#x00a9;&nbsp;Made&nbsp;by&nbsp;Tobias&lt;/p&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/footer&gt;<br />&nbsp;&nbsp;&lt;/body&gt;<br />&lt;/html&gt;<br
+            /></code>
+          </div>
+          <div class="col-sm">
+            Zusätzlich haben wir den folgenden Css-Code geschrieben, damit die
+            Website besser aussieht und Farbe bekommt.
+            <code
+              >#hello&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;rgb(0,&nbsp;255,&nbsp;115)<br />}<br /><br />#border&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;border-style:&nbsp;solid;<br />&nbsp;&nbsp;&nbsp;&nbsp;border-color:&nbsp;rgb(185,&nbsp;193,&nbsp;21);<br />&nbsp;&nbsp;&nbsp;&nbsp;border-radius:&nbsp;25px;<br />}<br /><br />#bg&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;background:&nbsp;#199c89;<br />&nbsp;&nbsp;&nbsp;&nbsp;border-radius:&nbsp;25px;<br />}</code
+            >
+            <br />
+            <hr />
+            Danach haben wir uns mit Eingabefeldern beschäftigt und diese
+            mithilfe von Javascript ausgelesen und dadurch eine Überschrift im
+            HTML-Dokument bearbeitet. Im folgendem Beispiel kan man im input
+            Feld etwas eingeben und nachdem man auf "submit" drückt, ändert sich
+            h1 zum Inhalt der Eingabe. Das JavaScript, welches wir benutzt
+            haben, ist folgendes:
+            <code
+              >function&nbsp;add()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;a=4;<br />&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;b=5;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;console.log(&quot;Commited!!&quot;);<br />&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;c&nbsp;=&nbsp;a&nbsp;+&nbsp;b;<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;element&nbsp;=&nbsp;document.getElementById(&quot;meinName&quot;);<br />&nbsp;&nbsp;&nbsp;&nbsp;element.innerText&nbsp;=&nbsp;c;<br />}<br /><br />function&nbsp;readInput()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;element&nbsp;=&nbsp;document.getElementById(&quot;meinName&quot;);<br />&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;input&nbsp;=&nbsp;document.getElementById(&quot;name&quot;).value<br />&nbsp;&nbsp;&nbsp;&nbsp;element.innerText&nbsp;=&nbsp;input<br />}</code
+            >
+          </div>
+        </div>
+        <div>
+          Im folgenden ist die fertige Website eingebunden:
+          <iframe
+            src="../lesson1/index.html"
+            onload="resizeIframe(this)"
+            scrolling="no"
+            style="border: 2px dashed chartreuse"
+          ></iframe>
+          <script type="text/javascript">
+            function resizeIframe(iframe) {
+              iframe.height =
+                iframe.contentWindow.document.body.scrollHeight - 200 + "px";
+              iframe.width = window.innerWidth - 30;
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+    <script src="/static/search.js"></script>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/verschiedenes/impressum.html">Impressum</a></li>
+          <li><a href="/verschiedenes/datenschutz.html">Datenschutz</a></li>
+          <li><a href="/verschiedenes/kontakt.html">Kontakt</a></li>
+          <li><a href="#top">🡅</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

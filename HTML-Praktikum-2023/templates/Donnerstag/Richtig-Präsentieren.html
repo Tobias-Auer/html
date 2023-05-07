@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikums Blog</title>
+    <link rel="stylesheet" href="/static/css/search.css">
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link
+      rel="icon"
+      type="image/vnd.microsoft.icon"
+      href="/static/images/favicon.ico"
+    />
+  </head>
+  <body>
+    <header class="sticky">
+      <nav>
+        <ul>
+          <li>
+            <img id="logo" src="/static/images/logo2.png" alt="logo" height="40" />
+          </li>
+          <li>
+            <div class="dropdown">
+              <button
+                class="dropbtn"
+                onclick="window.location.href=`/index.html`"
+              >
+                Startseite
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Dienstag</button>
+              <div class="dropdown-content">
+                <a href="/Dienstag/Informatik-Grundlagen.html"
+                  >Grundlagen der Informatik</a
+                >
+                <a href="/Dienstag/Java-Grundlagen.html">Java Grundlagen</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Mittwoch</button>
+              <div class="dropdown-content">
+                <a href="/Mittwoch/App-Entwicklung.html"
+                  >Mobile App entwicklung</a
+                >
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn current">Donnerstag</button>
+              <div class="dropdown-content">
+                <a href="/Donnerstag/Austausch-mit-Azubis.html"
+                  >Austausch mit Azubis</a
+                >
+                <a class="current" href="/Donnerstag/Richtig-Präsentieren.html"
+                  >Richtig Präsentieren</a
+                >
+                <a href="/Donnerstag/Business-Analyse.html">Business Analyse</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Freitag</button>
+              <div class="dropdown-content">
+                <a href="/Freitag/Webentwicklung.html"
+                  >Webseitenprogrammierung</a
+                >
+                <a href="/Freitag/Design-Thinking.html">Design Thinking</a>
+              </div>
+            </div>
+          </li><li>{{ loginVar | safe}}</li>
+          <li>
+            <div class="autocomplete", style="width: auto;">
+              <input
+                id="search"
+                type="text"
+                name="myCountry"
+                placeholder="search"
+              />
+            </div>
+          </li>
+          
+        </ul>
+      </nav>
+    </header>
+    <div class="content">
+    <div class="text">
+      <p>
+        <h1>Präsentationstechniken</h1>
+        <br />
+        Im Anschluss zu den Karrieremöglichkeiten in der Deutschen Bank haben
+        uns Yanik Oezdemir und Sevara Mashrabova übermittelt, wie wir in der
+        Arbeitswelt eine gute Präsentation halten.<br />
+        Es gibt einige Dinge zu beachten. Bei einer idealen Präsentation sollen
+        wir das Publikum mit einbeziehen und Blickkontakt halten. Wir sollen
+        Sicher und selbstbewusst wirken, konzentriert sein, auf unsere
+        Körperhaltung sowie die Mimik und Gestik achten und laut sprechen. Zudem
+        wurden uns Visualisierungsprogramme aufgezeigt, mit denen wir Umfragen
+        und vieles mehr erstellen können, um die Präsentation dynamischer zu
+        gestalten.<br />
+        Im Anschluss sind wir in Kleingruppen zusammengekommen und haben
+        unvorbereitet eine Präsentation vorgestellt. Das war eine besondere
+        Herausforderung, da wir viel improvisieren mussten, aber trotzdem sind
+        lustige und informative Präsentationen entstanden.
+      </p>
+      <br />
+      <img
+        src="/static/images/2-structure-presentation.png"
+        alt="BILD"
+        class="scale center"
+      />
+    </div>
+  </div>
+  <script src="/static/search.js"></script>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/verschiedenes/impressum.html">Impressum</a></li>
+          <li><a href="/verschiedenes/datenschutz.html">Datenschutz</a></li>
+          <li><a href="/verschiedenes/kontakt.html">Kontakt</a></li>
+          <li><a href="#top">🡅</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

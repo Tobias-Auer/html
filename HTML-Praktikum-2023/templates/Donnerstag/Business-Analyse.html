@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikums Blog</title>
+    <link rel="stylesheet" href="/static/css/search.css">
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link
+      rel="icon"
+      type="image/vnd.microsoft.icon"
+      href="/static/images/favicon.ico"
+    />
+  </head>
+  <body>
+    <header class="sticky">
+      <nav>
+        <ul>
+          <li>
+            <img id="logo" src="/static/images/logo2.png" alt="logo" height="40" />
+          </li>
+          <li>
+            <div class="dropdown">
+              <button
+                class="dropbtn"
+                onclick="window.location.href=`/index.html`"
+              >
+                Startseite
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Dienstag</button>
+              <div class="dropdown-content">
+                <a href="/Dienstag/Informatik-Grundlagen.html"
+                  >Grundlagen der Informatik</a
+                >
+                <a href="/Dienstag/Java-Grundlagen.html">Java Grundlagen</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Mittwoch</button>
+              <div class="dropdown-content">
+                <a href="/Mittwoch/App-Entwicklung.html"
+                  >Mobile App entwicklung</a
+                >
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn current">Donnerstag</button>
+              <div class="dropdown-content">
+                <a href="/Donnerstag/Austausch-mit-Azubis.html"
+                  >Austausch mit Azubis</a
+                >
+                <a href="/Donnerstag/Richtig-Präsentieren.html"
+                  >Richtig Präsentieren</a
+                >
+                <a class="current" href="/Donnerstag/Business-Analyse.html"
+                  >Business Analyse</a
+                >
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Freitag</button>
+              <div class="dropdown-content">
+                <a href="/Freitag/Webentwicklung.html"
+                  >Webseitenprogrammierung</a
+                >
+                <a href="/Freitag/Design-Thinking.html">Design Thinking</a>
+              </div>
+            </div>
+          </li><li>{{ loginVar | safe}}</li>
+          <li>
+            <div class="autocomplete", style="width: auto;">
+              <input
+                id="search"
+                type="text"
+                name="myCountry"
+                placeholder="search"
+              />
+            </div>
+          </li>
+          
+        </ul>
+      </nav>
+    </header><div class="content">
+    <div class="text">
+      <div style="float: right">
+        <img src="/static/images/Bild 1.JPG" alt="BILD" height="300px" />
+      </div>
+      <div>
+        <p>
+          <h1>Business-Analyse</h1><br />
+          Am Donnerstag haben wir von Klaus Völker eine zweieinhalbstündige
+          Einführung in die Business Analyse erhalten.Zunächst haben wir Ideen
+          gesammelt, was die Aufgaben eines Business Analysten sein könnten.
+          Dabei sind wir zu folgenden Ergebnissen gekommen:
+        </p>
+      </div>
+
+      <img src="/static/images/Bild 2.JPG" alt="BILD" />
+      <br />
+      Ein Business Analyst hat die Aufgabe Geschäftsprozesse, Statistiken und
+      Daten zu analysieren, um die Geschäftsanforderungen und Kundenbedürfnisse
+      zu verstehen. So verbessert er die Geschäftsprozesse und steigert die
+      Effizienz des Unternehmens. Als nächster Schritt wurde uns das
+      Wasserfallmodell gezeigt, welches die Arbeit eines Business Analysten in 5
+      Schritten zeigt.
+      <br />
+
+      <p></p>
+      <div class="text_img_box">
+        <div>
+          <p>
+            Des weiteren haben wir über eine Anforderungs-Architekturen und die
+            Sicherheit von Zwei-Faktor-Authentisierungen ausgetauscht. Zuletzt
+            haben wir noch über das Prinzip der Stakeholder gesprochen.
+            Stakeholder sind Personen, die ein Interesse an einer Sache haben,
+            von einem Vorhaben betroffen sind oder dieses beeinflussen können /
+            wollen. Es ist verblüffend zu sehen, wie viele Personengruppen an
+            einem Projekt mitarbeiten und die Lösung beeinflussen.
+          </p>
+        </div>
+        <div>
+          <img src="/static/images/Bild 3.JPG" alt="BILD" height="500px" />
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+  <script src="/static/search.js"></script>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/verschiedenes/impressum.html">Impressum</a></li>
+          <li><a href="/verschiedenes/datenschutz.html">Datenschutz</a></li>
+          <li><a href="/verschiedenes/kontakt.html">Kontakt</a></li>
+          <li><a href="#top">🡅</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

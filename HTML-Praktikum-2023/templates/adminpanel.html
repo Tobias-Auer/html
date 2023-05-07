@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adminpannel</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/buttons.css">
+    <style>
+          table, th, td {
+          padding: 15px;
+          border: 1px solid black;
+          border-collapse: collapse;
+          }
+          .Button {
+            box-shadow: 10px 10px 2px 0px #707070;
+            background:linear-gradient(to bottom, #00fa96 5%, #00d9ff 100%);
+            background-color:#00fa96;
+            border-radius:42px;
+            border:2px solid #707070;
+            display:inline-block;
+            cursor:pointer;
+            color:#000000;
+            font-family:Arial;
+            font-size:28px;
+            padding:10px 51px;
+            text-decoration:none;
+        }
+        .Button:hover {
+            background:linear-gradient(to bottom, #00d9ff 5%, #00fa96 100%);
+            background-color:#00d9ff;
+        }
+        .Button:active {
+            position:relative;
+            top:1px;
+        }        
+    </style>
+</head>
+<body>
+<h1>Benutzerverwaltung</h1>
+<table>
+    <!-- Table headers -->
+        <tr style="color: green; ">
+            <td>Benutername</td>
+            <td>Erstellt am</td>
+            <td>Erstellt von</td>
+            <td>Rechte</td>
+            <td>Passwort bearbeiten</td>
+            <td>Benutzer löschen</td>
+        </tr>
+    <!-- For loop logic of jinja template -->
+    {%for i in range(0, len)%}
+    <!-- table rows -->
+    <tr>
+        <td>{{userlist[i][0]}}</td>
+        <td>{{userlist[i][2]}}</td>
+        <td>{{userlist[i][3]}}</td>
+        <td>{{userlist[i][4]}}</td>
+
+        <td>
+            <div>
+                {%if rang==0%}
+                <form action = "/commit" method="post">
+                    <input type="submit" class="Button" name="change_password~{{userlist[i][0]}}" value="Passwort ändern">
+                </form>
+                {%elif userlist[i][4] != 0%}
+                <form action = "/commit" method="post">
+                    <input type="submit" class="Button" name="change_password~{{userlist[i][0]}}" value="Passwort ändern">
+                </form>
+                {% else %}
+            <center><p>Nicht verfügbar</p></center>
+                {%endif %}
+            </div>
+        </td>
+        <td>
+            <div>
+                {%if userlist[i][4] != 0%}
+                <form action = "/commit" method="post">
+                    <input type="submit" class="Button" name="del~{{userlist[i][0]}}" value="Löschen">
+                </form>
+                {% else %}
+            <center><p>Nicht verfügbar</p></center>
+                {%endif %}
+            </div>
+        </td>
+        {%endfor%}
+    </tr>
+</table>
+<p></p>
+<form action = "/commit" method="post">
+    <input type="submit" class="Button" name="newUser" value="Neuen Benutzer hinzufügen">
+</form>
+<div class="flashes">
+    {% for message in get_flashed_messages()%}
+      <script>confirm("{{message}}")</script>
+    {% endfor %}
+  </div>
+</body>
+</html>

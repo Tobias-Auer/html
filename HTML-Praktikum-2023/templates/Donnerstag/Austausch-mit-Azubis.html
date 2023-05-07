@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikums Blog</title>
+    <link rel="stylesheet" href="/static/css/search.css">
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link
+      rel="icon"
+      type="image/vnd.microsoft.icon"
+      href="/static/images/favicon.ico"
+    />
+  </head>
+  <body>
+    <header class="sticky">
+      <nav>
+        <ul>
+          <li>
+            <img
+              id="logo"
+              src="/static/images/logo2.png"
+              alt="logo"
+              height="40"
+            />
+          </li>
+          <li>
+            <div class="dropdown">
+              <button
+                class="dropbtn"
+                onclick="window.location.href=`/index.html`"
+              >
+                Startseite
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Dienstag</button>
+              <div class="dropdown-content">
+                <a href="/Dienstag/Informatik-Grundlagen.html"
+                  >Grundlagen der Informatik</a
+                >
+                <a href="/Dienstag/Java-Grundlagen.html">Java Grundlagen</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Mittwoch</button>
+              <div class="dropdown-content">
+                <a href="/Mittwoch/App-Entwicklung.html"
+                  >Mobile App entwicklung</a
+                >
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn current">Donnerstag</button>
+              <div class="dropdown-content">
+                <a class="current" href="/Donnerstag/Austausch-mit-Azubis.html"
+                  >Austausch mit Azubis</a
+                >
+                <a href="/Donnerstag/Richtig-Präsentieren.html"
+                  >Richtig Präsentieren</a
+                >
+                <a href="/Donnerstag/Business-Analyse.html">Business Analyse</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Freitag</button>
+              <div class="dropdown-content">
+                <a href="/Freitag/Webentwicklung.html"
+                  >Webseitenprogrammierung</a
+                >
+                <a href="/Freitag/Design-Thinking.html">Design Thinking</a>
+              </div>
+            </div>
+          </li><li>{{ loginVar | safe}}</li>
+          <li>
+            <div class="autocomplete", style="width: auto;">
+              <input
+                id="search"
+                type="text"
+                name="myCountry"
+                placeholder="search"
+              />
+            </div>
+          </li>
+          
+        </ul>
+      </nav>
+    </header>
+    <div class="content">
+      <div class="text">
+        <h1>Austausch mit Auszubildenden</h1>
+        <br />
+        Am Donnerstag Morgen haben uns Yanik Oezdemir und Sevara Mashrabova,
+        zwei Auszubildende, die Karrieremöglichkeiten der Deutschen Bank
+        aufgezeigt. Da die Informatik ein sehr Zukunftssicheres Berufsfeld ist,
+        bietet die deutsche Bank dort einige Stellen an. Uns wurden die Bereiche
+        Fachinformatiker in Anwendungsentwicklung, Fachinformatiker in
+        Systemintegration, Wirtschaftsinformatik und Softwaretechnologie
+        vorgestellt.<br /><br />
+        Die Angestellten der Informatik entwickeln und unterhalten Programme,
+        die für das Geschäft der Bank erforderlich sind, und sorgen für deren
+        Sicherheit. <br />Die Teams arbeiten eng mit den Geschäftsbereichen und
+        den anderen Infrastruktureinheiten daran, die IT-Systeme zu
+        modernisieren, um Komplexität zu reduzieren, Risiken zu minimieren und
+        Wachstum zu ermöglichen.<br /><br />
+        Zudem bietet die Bank neben der Ausbildung und dem Studium auch ein
+        duales Studium an, bei dem die Studenten praktische Erfahrungen im
+        Betrieb und theoretisches Wissen in der Hochschule sammeln können.
+        <br />
+        <img src="/static/images/DB__KARRIERE.png" alt="BILD" class="scale" />
+      </div>
+    </div>
+    <script src="/static/search.js"></script>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/verschiedenes/impressum.html">Impressum</a></li>
+          <li><a href="/verschiedenes/datenschutz.html">Datenschutz</a></li>
+          <li><a href="/verschiedenes/kontakt.html">Kontakt</a></li>
+          <li><a href="#top">🡅</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registrieren</title>
+    <link href="/static/css/buttons2.css" rel="stylesheet" type="text/css" />
+    <style>
+      form {
+        margin: 100px;
+      }
+      .input-field {
+        position: relative;
+        width: 250px;
+        height: 44px;
+        line-height: 44px;
+      }
+      label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: #d3d3d3;
+        transition: 0.2s all;
+        cursor: text;
+      }
+      input {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        padding: 0.5rem 0;
+        border-bottom: 2px solid #d3d3d3;
+        box-shadow: none;
+        color: #ffffff;
+        background-color: #37383c;
+      }
+      input:invalid {
+        outline: 0;
+        color: #ff2300;
+        border-color: #ff2300;
+      }
+      input:focus,
+      input:valid {
+        border-color: #00dd22;
+      }
+      input:focus ~ label,
+      input:valid ~ label {
+        font-size: 14px;
+        top: -24px;
+        color: #00dd22;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      function getInputValue() {
+        // Selecting the input element and get its value
+        var userVar = document.getElementById("user").value;
+        var pwd = document.getElementById("pwd").value;
+        var checkVal = document.getElementById("check_pwd").value;
+        var rangVal;
+        if (pwd == checkVal && pwd != "" && userVar != "") {
+          const data = { username: userVar, password: pwd };
+          console.log("START REQUEST");
+          fetch("/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((response) => {
+              console.log("HTTP-Statuscode:", response.status);
+              if (response.status == 400) {
+                alert("Der Nutzername ist bereits vergeben!");
+                throw new Error("Fehler");
+              }
+              return response.json();
+            })
+            .then((data) => {
+              console.log("Registrierungsantwort:", data);
+              window.location.replace("/login");
+            })
+            .catch((error) => {
+              console.error("Fehler bei der Registrierung:", error);
+            });
+        } else {
+          alert("Das Formular wurde fehlerhaft ausgefüllt!");
+          console.log("error");
+        }
+      }
+    </script>
+    <h1 style="color: aliceblue">
+      Fülle die Felder aus, um dich zu registrieren!
+    </h1>
+
+    <div>
+      <div class="input-field">
+        <input id="user" type="text" required />
+        <label for="user">Username: </label>
+      </div>
+      <br>
+      <div class="input-field">
+        <input id="pwd" type="password" required />
+        <label for="pwd">Passwort: </label>
+      </div>
+      <br>
+      <div class="input-field">
+        <input id="check_pwd" type="password" required />
+        <label for="check_pwd">Passwort wiederholen: </label>
+      </div>
+      <br />
+    </div>
+    <div>
+      <a href="/login" style="--clr: #ff2400"><span>Abbrechen</span><i></i></a>
+    </div>
+    <div>
+      <a onclick="getInputValue()" style="--clr: #6eff3e"
+        ><span>Bestätigen!</span><i></i
+      ></a>
+    </div>
+  </body>
+</html>
