@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./static/css/header.css" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="./static/images/favicon.ico">
+  </head>
+  <body>
+    <header class="sticky">
+      <nav>
+        <ul>
+          <li>
+            <img id="logo" src="./static/images/logo2.png" alt="logo" height="40" />
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn" onclick="window.location.href=`/#`">Link1</button>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn current">Section1</button>
+              <div class="dropdown-content">
+                <a href="#">Link1</a>
+                <a href="#">Link3</a>
+                <a class="current">current page</a>
+                <a href="#">Link3</a>
+                
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+                <button class="dropbtn">Section2</button>
+                <div class="dropdown-content">
+                  <a href="#">Link1</a>
+                </div>
+              </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div style="height: 50cm;">
+    </div>
+
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">Kontakt</a></li>
+          <li><a href="#top">🡅</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
