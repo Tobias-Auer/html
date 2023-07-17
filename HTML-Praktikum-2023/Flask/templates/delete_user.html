@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Do you want to delete {{name}}?</title>
+        <link rel="stylesheet" type="text/css" href="static/buttons2.css">
+    </head>
+
+    <body>
+        <h1>Möchtest du wirklich {{name}} aus dem System löschen?</h1>
+        <div>
+            <a href="/adminpanel" style="--clr:#6eff3e"><span>Abbrechen</span><i></i></a>
+        </div>
+        <div>
+            <a href="/adminpanel?t=del~{{name}}" style="--clr:#FF2400"><span>{{name}} löschen!</span><i></i></a>
+        </div>
+
+
+    </body>
+</html>

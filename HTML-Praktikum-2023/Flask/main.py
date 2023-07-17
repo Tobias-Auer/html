@@ -1,14 +1,20 @@
-import os
-import smtplib
-from flask import Flask, send_from_directory, redirect, url_for, session, render_template, request, abort, jsonify
+# import logging
+
+from flask import Flask, render_template, request, url_for, redirect, session, abort
+
 import databes_check as dc
 
+# logfile = "log.txt"
+
+# logging.basicConfig(filename=logfile,
+#                     filemode='a',
+#                     format=f'%(levelname)s: %(asctime)s {"-"*5}%(name)s{"-"*10+">"}%(message)s\n{"#"*50}',
+#                     datefmt='%H:%M:%S',
+#                     level=logging.DEBUG)
+#
+# logging.getLogger('werkzeug').disabled = True
 app = Flask(__name__)
 app.secret_key = "that´s_a_really_good,_long_and_secret_secret_key!1234"
-
-allowed_urls = ("index.html", "verschiedenes/impressum.html", "verschiedenes/datenschutz.html", "verschiedenes"
-                                                                                                "/kontakt.html",
-                "verschiedenes/kontaktIframe.html", "register")
 
 
 @app.after_request
@@ -21,12 +27,12 @@ def add_header(response):
 
 @app.errorhandler(404)
 def errorhandler404(e):
-    return redirect("/index.html")
+    return redirect(url_for("index"))
 
 
 @app.errorhandler(403)
 def errorhandler403(e):
-    return f"<center><h1>Du hast keine Berechtigung um diesen Befehl auszuführen</h1><a href={redirect('/index.html')} zurück" \
+    return f"<center><h1>Du hast keine Berechtigung um diesen Befehl auszuführen</h1><a href={redirect('/')} zurück" \
            f"</a></center> "
 
 
@@ -51,13 +57,19 @@ def authorized(mode="checksession", **kwargs):
     raise RuntimeError
 
 
-# ==================================================================================================================== #
 @app.route("/", methods=["POST", "GET"])
 def index():
     if request.method == "POST":
         if not authorized(name=request.form.get("name"), password=request.form.get("password")):
             return redirect(url_for("login"))
-    return redirect("/index.html")
+        return redirect(request.url)
+    else:
+        if not authorized():
+            return redirect(url_for("login"))
+
+    name = session["name"]
+    rang = dc.return_values(value="rang", user=name)
+    return render_template("index.html", name=name, rang=rang)
 
 
 @app.route("/login/", methods=["POST", "GET"])
@@ -143,90 +155,7 @@ def commit():
         return "Ungültiger Post-Befehl"
 
 
-@app.route("/register", methods=["POST", "GET"])
-def register():
-    print("Register")
-    if request.method == "POST":
-        print("Register post")
-        username = request.json['username']
-        password = request.json['password']
-        register_try = dc.add_user(username, password, "SYSTEM", 2)
-        print("LOLOL:")
-        print(register_try)
-        if register_try:
-            response = {'message': 'Erfolgreich registriert!'}
-            return jsonify(response), 200
-        else:
-            response = {'message': "User already registered"}
-            return jsonify(response), 400
-
-    print("ho")
-    return render_template("register_user.html")
-
-
-@app.route("/kontakt", methods=["POST"])
-def handle_konakt():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    subject = request.form.get('subject')
-    message = request.form.get('message')
-
-    # Send email
-    sender_email = 'balu.safemail@gmail.com'  # replace with your email address
-    sender_password = 'uxtivfejyjlpmcpm'  # replace with your email password
-
-    receiver_email = 'balu.safemail@gmail.com'  # replace with the recipient email address
-
-    smtp_server = 'smtp.gmail.com'  # replace with your SMTP server
-    smtp_port = 587  # replace with the SMTP server port
-
-    with smtplib.SMTP(smtp_server, smtp_port) as server:
-        server.starttls()
-        print("Server started")
-        server.login(sender_email, sender_password)
-        print("login")
-        email_message = f"Name: {name}\nSubject: {subject}\n\nMessage: {message}\nEmail: {email}\n"
-        print(email_message)
-        server.sendmail(sender_email, receiver_email, email_message)
-        print("done")
-    return jsonify({'message': 'Message sent successfully!'})
-
-
-@app.route('/<path:path>')
-def serve_file(path):
-    print(path)
-    if path in allowed_urls:
-        if path == "index.html":
-            print("CORRECT")
-            if authorized():
-                if dc.return_values(value="rang", user=session["name"]) <= 1:
-                    return render_template("index.html",
-                                           loginVar=f"<div>Willkommen {session['name']}<br> <a href=\"/login\" id=logoutLink>Logout</a><br><a href=/adminpanel id=adminLink>Nutzerverwaltung</a></div>")
-                return render_template("index.html",
-                                       loginVar=f"<div>Willkommen {session['name']}<br> <a href=\"/login\" id=logoutLink>Logout</a></div>")
-            return render_template("index.html", loginVar="<a href=\"/login\" id=loginLink>Login</a>")
-        if authorized():
-            if dc.return_values(value="rang", user=session["name"]) <= 1:
-                return render_template(path,
-                                       loginVar=f"<div>Willkommen {session['name']}<br> <a href=\"/login\" id=logoutLink>Logout</a><br><a href=/adminpanel id=adminLink>Nutzerverwaltung</a></div>")
-            return render_template(path,
-                                   loginVar=f"<div>Willkommen {session['name']}<br> <a href=\"/login\" id=logoutLink>Logout</a></div>"
-                                   )
-        return render_template(path, loginVar="<a href=\"/login\" id=loginLink>Login</a>")
-    if not authorized():
-        print("DISALLOWED: ")
-        print(path)
-        return redirect(url_for("login"))
-    if ".css" in path or ".js" in path or ".png" in path or ".js" in path or ".jpg" in path:
-        directory = os.path.dirname(path)
-        filename = os.path.basename(path)
-        return send_from_directory(directory, filename)
-    if dc.return_values(value="rang", user=session["name"]) <= 1:
-        return render_template(path,
-                               loginVar=f"<div>Willkommen {session['name']}<br> <a href=\"/login\" id=logoutLink>Logout</a><br><a href=/adminpanel id=adminLink>Nutzerverwaltung</a></div>")
-    return render_template(path,
-                           loginVar=f"<div>Willkommen {session['name']}<br> <a href=\"/login\" id=logoutLink>Logout</a></div>")
-
-
 if __name__ == '__main__':
-    app.run(debug=True, port=80, host="0.0.0.0", threaded=True)
+    # logging.info("\tStarting server...")
+    # os.system("ipconfig")
+    app.run(port=80, host="0.0.0.0", debug=True, threaded=True)

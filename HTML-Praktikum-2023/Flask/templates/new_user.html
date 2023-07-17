@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do you want to change the password from {{name}}?</title>
+    <link href="static/buttons2.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <script>
+        function getInputValue(){
+            // Selecting the input element and get its value
+            var userVar = document.getElementById("user").value;
+            var pwd = document.getElementById("pwd").value;
+            var checkVal = document.getElementById("check_pwd").value;
+            var rangVal;
+            const radioButtons = document.querySelectorAll('input[name="rang"]');
+            for (const radioButton of radioButtons) {
+              if (radioButton.checked) {
+                rangVal = radioButton.value;
+                break;
+              }
+            }
+            if (pwd == checkVal && pwd != "" && userVar != ""){
+              // Displaying the value
+              window.location.replace("/adminpanel?t=new_user&tt=" + userVar + "&s=" + pwd + "&gt=" + rangVal);return false;
+             }
+             else{
+                 alert("Das Formular wurde fehlerhaft ausgefüllt!")
+             }
+        }
+    </script>
+  <h1>Möchtest du wirklich einen neuen Nutzer anlegen?</h1>
+  <div>
+    <input id="user" type="text" placeholder="Enter new user">
+    <input id="pwd" type="text" placeholder="Enter new password">
+    <input id="check_pwd" type="text" placeholder="Enter the password again">
+      <br>
+    <input type="radio" id="1" name="rang" value="1">
+    <label for="1">Administrator</label><br>
+    <input type="radio" id="2" name="rang" value="2" checked="checked">
+    <label for="2">Normaler Nutzer</label><br>
+  </div>
+  <div>
+      <a href="/adminpanel" style="--clr:#6eff3e"><span>Abbrechen</span><i></i></a>
+  </div>
+  <div>
+      <a onclick="getInputValue()" style="--clr:#FF2400"><span>Bestätigen!</span><i></i></a>
+  </div>
+
+
+</body>
+</html>
