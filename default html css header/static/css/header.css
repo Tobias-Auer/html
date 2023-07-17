@@ -136,39 +136,7 @@ img.scale {
   margin-right: auto;
 }
 
-/* Stile für den Code-Block */
-code {
-  display: block;
-  margin: 1rem 0;
-  padding: 1rem;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: black !important;
-  background-color: #ddd !important;
-}
 
-code {
-  padding-left: 10px;
-  border: 0;
-  border-left: 5px solid;
-  animation: gradient-animation 10s ease infinite;
-}
-
-@keyframes gradient-animation {
-  0% {
-    border-color: #1689d6;
-  }
-  50% {
-    border-color: #0000fe;
-  }
-  100% {
-    border-color: #1689d6;
-  }
-}
 
 /* Input-Feld */
 #search {
