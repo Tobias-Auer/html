@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Titel</title>
-  <link rel="stylesheet" href="./static/css/search.css" />
+  <!-- Remove when no searchbar is required -->
+  <link rel="stylesheet" href="./static/css/search.css" />    
+  
   <link rel="stylesheet" href="./static/css/header.css" />
   <link rel="icon" type="image/vnd.microsoft.icon" href="./static/images/favicon.ico" />
 </head>
@@ -48,6 +50,7 @@
         
         <li>{{ loginVar | safe}}</li>
         <li>
+          <!-- Remove when no searchbar is required -->
           <div class="autocomplete" , style="width: auto">
             <input id="search" type="text" name="search" placeholder="search" />
           </div>
@@ -71,7 +74,7 @@
       CONTENT
     </div>
   </div>
-
+  <!-- Remove when no searchbar is required -->
   <script src="./static/search.js"></script>
   <footer>
     <nav>

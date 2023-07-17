@@ -117,7 +117,13 @@ body {
   margin: 1rem;
   font-size: x-large;
 }
-
+@media screen and (max-width: 750px) {
+  iframe {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+  }
+}
 img.scale {
   max-width: 100%;
   height: auto;
@@ -130,7 +136,80 @@ img.scale {
   margin-right: auto;
 }
 
+/* Stile für den Code-Block */
+code {
+  display: block;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: black !important;
+  background-color: #ddd !important;
+}
 
+code {
+  padding-left: 10px;
+  border: 0;
+  border-left: 5px solid;
+  animation: gradient-animation 10s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    border-color: #1689d6;
+  }
+  50% {
+    border-color: #0000fe;
+  }
+  100% {
+    border-color: #1689d6;
+  }
+}
+
+/* Input-Feld */
+#search {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 5.3rem;
+  background-image: url(/static/images/search.png),
+    linear-gradient(to right, #ff9966, #ff5e62);
+  background-position: right center, right center;
+  background-repeat: no-repeat;
+  background-size: 64px 64px, auto;
+  /* background-position: center right 0px;
+  background-repeat: no-repeat; */
+  color: #fff;
+  transition: background-image 0.5s ease;
+}
+
+/* Vordefinierter Text (Placeholder) */
+#search::placeholder {
+  color: #fff;
+  opacity: 0.8;
+}
+
+/* Focus-Zustand */
+#search:focus {
+  outline: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #cc6e3e;
+  background-image: none;
+  width: 10rem;
+}
+
+header ul li:nth-last-child(-n + 2) {
+  float: right;
+  margin-right: rem;
+}
 
 #logoutLink {
   color: #64a28e !important;
