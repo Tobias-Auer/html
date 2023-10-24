@@ -1,5 +1,4 @@
-// (The lists are still from the internship at Deutsche Bank)
-// This code is shitty, but it works xD
+// (These lists are still from the internship at Deutsche Bank AG)
 var aVar = {
   "Austauch mit Auszubildenden": "Austauch mit Auszubildenden",
   "Austauch mit Azubis": "Austauch mit Auszubildenden",
