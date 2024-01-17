@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header @toggle-add-task="showAddTask=!showAddTask" title="Task Tracker" />
+    <Header @toggle-add-task="toggleAddTask" title="Task Tracker" :showAddTask="showAddTask" />
     <div v-show="showAddTask">
       <AddTask @add-task="addTask" />
     </div>
@@ -49,6 +49,9 @@ export default {
     ]
   },
   methods: {
+    toggleAddTask() {
+        this.showAddTask =! this.showAddTask;
+    },
     deleteTask(id) {
       if (confirm("Are you sure?"))
         this.tasks = this.tasks.filter((task) => task.id !== id)
