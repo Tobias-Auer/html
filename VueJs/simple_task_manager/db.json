@@ -10,13 +10,13 @@
       "id": "2",
       "text": "Meeting at school",
       "day": "March 3st at 1:30pm",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": "3",
       "text": "Food shopping",
       "day": "March 1st at 11:00am",
-      "reminder": false
+      "reminder": true
     }
   ]
 }
