@@ -1,38 +1,37 @@
 .container {
-    display: grid;
-    grid-template-rows: 200px 200px 200px;
-    grid-template-columns: 1fr 1.5fr 1fr;
+  display: grid;
+  grid-template-rows: 200px 200px 200px;
+  grid-template-columns: 1fr 1.5fr 1fr;
 
-    justify-content: center;
-    grid-template-areas: 
-        'stat1 image stat3'
-        'stat2 image stat4'
-        'empty1 stat5 empty2';
+  justify-content: center;
+  grid-template-areas:
+    "stat1 image stat3"
+    "stat2 image stat4"
+    "empty1 stat5 empty2";
 }
 
 .item-1 {
-    grid-area: stat1;
+  grid-area: stat1;
 }
 
 .item-2 {
-    grid-area: stat2;
+  grid-area: stat2;
 }
 
 .item-3 {
-    grid-area: image;
+  grid-area: image;
 }
 
 .item-4 {
-    grid-area: stat3;
+  grid-area: stat3;
 }
 
-.item-5{
-    grid-area: stat4;
+.item-5 {
+  grid-area: stat4;
 }
-.item-6{
-    grid-area: stat5;
+.item-6 {
+  grid-area: stat5;
 }
-
 
 .container-util {
   max-width: 1536px;
@@ -47,8 +46,6 @@
   .container-util {
     max-width: 1280px;
   }
-
-  
 }
 
 /* xl */
@@ -78,15 +75,15 @@
     max-width: 475px;
   }
   .container {
-    grid-template-rows: 200px;
-    grid-template-columns: 300px repeat(5, 100px);
-    grid-template-areas: 
-        'image'
-         'stat3'
-        'stat2' 
-        'stat1'
-         'stat4'
-         'stat5';
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px repeat(5, 100px);
+    grid-template-areas:
+      "image"
+      "stat3"
+      "stat2"
+      "stat1"
+      "stat4"
+      "stat5";
   }
 }
 
